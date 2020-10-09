@@ -1,3 +1,6 @@
+//Ángel Tejeda Tiscareño (Oyente :P)
+//Examen 1 de Aplicaciones Móviles
+
 //La variable temperatures guarda las temperaturas que se reciban de la petición a la API para trabajar con ellas
 //en caso de que se deseen cambiar las unidades.
 var temperatures = {};

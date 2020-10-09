@@ -1,3 +1,6 @@
+//Ángel Tejeda Tiscareño (Oyente :P)
+//Examen 1 de Aplicaciones Móviles
+
 function getResponse(city) {
   return new Promise((resolve, reject) => {
     //Llamada AJAX
