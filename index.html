@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Weather</title>
+    <!-- Favicon: https://stackoverflow.com/questions/9943771/adding-a-favicon-to-a-static-html-page -->
+    <link rel="icon" type="image/png" href="https://cdn.iconscout.com/icon/free/png-512/weather-191-461610.png"/>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <script src="apiWeatherCall.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>Buscador de Temperaturas Actuales en la<br> República Mexicana</h1>
+      <h3>Ingresa en la caja de texto el nombre de la ciudad</h3>
+
+      <form id="form" onclick="return false">
+        <span id="loading" style="display: none;"><i class="fa fa-refresh fa-spin"></i> Cargando...</span>
+        <!-- https://stackoverflow.com/questions/108207/how-do-i-make-an-html-text-box-show-a-hint-when-empty -->
+        <input id="input" type="text" placeholder="Ingrese una Ciudad"><br>
+        <button class="button" id="submitButton">Ver Clima</button>
+      </form>
+    </header>
+
+    <div id="results" style="display: none">
+      <button class="button" id="close">X</button>
+
+      <div id="city">
+        <a class="button" id="link" target="_blank" href=""><img id="googleMaps" src="googleMaps.png" href="" title="Abrir Google Maps"></a>
+        <span id="cityName"></span><br>Ciudad
+      </div>
+      
+      <div id="weather">
+        <div id="container">
+          <div>
+            <img id="icon"></img>
+          </div>
+          <div>
+            <span id="weatherDecription"></span>
+          </div>
+        </div>
+        Clima
+      </div>
+
+      <hr>
+
+      <div id="temperatures">
+        <label for="units">Unidades: </label>
+        <select name="units" id="degreesSelect">
+          <option value="1">Celcius (°C)</option>
+          <option value="2">Farenheit (°F)</option>
+          <option value="3">Kelvin (°K)</option>
+        </select>
+
+        <div id="currentTemp">
+          <span></span><br>
+          Temperatura Actual
+        </div>
+
+        <div id="minTemp">
+          <span></span><br>
+          Temperatura Mínima
+        </div>
+  
+        <div id="maxTemp">
+          <span></span><br>
+          Temperatura Máxima
+        </div>
+
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </body>
+</html>
