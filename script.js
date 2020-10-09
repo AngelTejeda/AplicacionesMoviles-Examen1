@@ -43,42 +43,6 @@ $(document).ready(() => {
   });
 });
 
-function toggleFormDisplay(action) {
-  var submitButton = $("#submitButton");
-  var input = $("#input");
-  var loading = $("#loading");
-
-  switch(action) {
-    case "show": {
-      submitButton.css({display: ""});
-      input.css({display: ""});
-      loading.css("display", "none");
-      break;
-    }
-    case "hide": {
-      submitButton.css("display", "none");
-      input.css("display", "none");
-      loading.css("display", "block");
-      break;
-    }
-  }
-}
-
-function showData(data) {
-  response.min = data.main.temp_min;
-  response.max = data.main.temp_max;
-  response.current = data.main.temp;
-  
-  var link = `https://www.google.com/maps/place/${data.coord.lat}+${data.coord.lon}/@${data.coord.lat},${data.coord.lon},8z`;
-  $("#link").attr("href", link);
-  $("#cityName").html(data.name);
-  $("#icon").attr("src", "http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png");
-  $("#weatherDecription").html( titleCase(data.weather[0].description) );
-  
-  $("#degreesSelect").selectedIndex = 0;
-  toggleDegrees("1");
-}
-
 function titleCase(string) {
   string.toLowerCase();
   var array = string.split(" ");
