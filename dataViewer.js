@@ -98,6 +98,12 @@ function displayData(data) {
   $("#degreesSelect").selectedIndex = 0;
   //Muestra las temperaturas que regresó la petición a la API.
   toggleDegrees("1");
+
+  $("#results").fadeIn(300, () => {
+    $("html, body").animate({
+      scrollTop: $('html, body').get(0).scrollHeight
+    }, 800);  
+  });
 }
 
 //Cambia las unidades en que se muestra la temperatura, dependiendo del parámetro que se reciba.
@@ -114,12 +120,6 @@ function displayWeather(units, min, max, current) {
   $("#currentTemp span").html(current + units);
   $("#minTemp span").html(min + units);
   $("#maxTemp span").html(max + units);
-
-  $("#results").fadeIn(300, () => {
-    $("html, body").animate({
-      scrollTop: $('html, body').get(0).scrollHeight
-    }, 800);  
-  });
 }
 
 //Regresa una cadena formateada para que la primera letra de cada palabra sea mayúscula
