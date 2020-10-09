@@ -95,7 +95,7 @@ function displayData(data) {
   $("#weatherDecription").html( titleCase(data.weather[0].description) );
   
   //Selecciona la opción de Grados Centígrados en el Select.
-  $("#degreesSelect").selectedIndex = 0;
+  $("#degreesSelect").val("1");
   //Muestra las temperaturas que regresó la petición a la API.
   toggleDegrees("1");
 
